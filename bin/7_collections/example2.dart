@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 void main(List<String> args) {
   final surnames = {"Feil", "Kuphal", "Kemmer", "Little", "Schamberger"};
 
@@ -50,4 +52,10 @@ void main(List<String> args) {
   }
 
   print("----------------------------------");
+
+  if (SetEquality().equals(ages1, ages2)) {
+    print("Ages are equal");
+  } else {
+    print("Ages are not equal");
+  }
 }
