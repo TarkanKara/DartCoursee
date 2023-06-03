@@ -48,13 +48,29 @@ void main() async {
   User user = await userRepository.getById(1);
   print('User: ${user.name}'); // Örnek çıktı: User: John Doe
 
+  print("---------------------------------");
+
   List<User> users = await userRepository.getAll();
   for (User user in users) {
     print('User: ${user.name}');
   }
 
+  print("---------------------------------");
+
   User newUser = User(4, 'Alice Brown');
   await userRepository.save(newUser); // Örnek çıktı: Saving user: Alice Brown
 
+  print("---------------------------------");
+
   await userRepository.delete(user); // Örnek çıktı: Deleting user: John Doe
 }
+
+// User: John Doe
+// ---------------------------------
+// User: John Doe
+// User: Jane Smith
+// User: Bob Johnson
+// ---------------------------------
+// Saving user: Alice Brown
+// ---------------------------------
+// Deleting user: John Doe
